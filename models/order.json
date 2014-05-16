@@ -1,0 +1,72 @@
+{
+    "name": "Order",
+    "options": {
+        "idInjection": false,
+        "relations": {
+            "order_type": {
+                "model": "OrderType",
+                "type": "belongsTo",
+                "foreignKey": "order_type_id"
+            },
+            "customer": {
+                "model": "Customer",
+                "type": "belongsTo",
+                "foreignKey": "customer_id"
+            },
+            "scheduled_game": {
+                "model": "Game",
+                "type": "belongsTo",
+                "foreignKey": "scheduled_game_id"
+            }
+        }
+    },
+    "properties": {
+        "id": {
+            "type": "String",
+            "length": 20,
+            "id": true
+        },
+        "order_date": {
+            "type": "Date",
+            "required": true
+        },
+        "customer_id": {
+            "type": "Number",
+            "required": true
+        },
+        "order_type_id": {
+            "type": "Number",
+            "required": true,
+            "default": 1
+        },
+        "scheduled_game_id": {
+            "type": "Number",
+            "required": false
+        },
+        "private_game_date": {
+            "type": "Date",
+            "required": true
+        },
+        "certificates_bought": {
+            "type": "Number",
+            "doc": "Число сертификатов",
+            "default": 0,
+            "required": false
+        },
+        "additional_players": {
+            "type": "String",
+            "required": false,
+            "length": 255
+        },
+        "additional_players_count": {
+            "type": "Number",
+            "required": false,
+            "default": 0
+        },
+        "additional_info": {
+            "type": "String",
+            "length": 1024,
+            "required": false
+        }
+    }
+}

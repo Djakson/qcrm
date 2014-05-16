@@ -1,0 +1,76 @@
+[
+    {
+        "email": "foo@bar.com",
+        "username": "foo",
+        "password": "123456",
+        "user": {
+            "id": 1
+        },
+        "city": {
+            "id": 1
+        },
+        "short_currency_name": "руб.",
+        "scenarios": [
+            {
+                "id": 1
+            }
+        ]
+    },
+    {
+        "email": "bar@bar.com",
+        "username": "bar",
+        "password": "123456",
+        "user": {
+            "id": 2
+        },
+        "city": {
+            "id": 3
+        },
+        "short_currency_name": "руб.",
+        "scenarios": [
+            {
+                "id": 2
+            }
+        ]
+    },
+    {
+        "email": "bat@bar.com",
+        "username": "bat",
+        "password": "123456",
+        "user": {
+            "id": 3
+        },
+        "city": {
+            "id": 6
+        },
+        "short_currency_name": "руб.",
+        "scenarios": [
+            {
+                "id": 11
+            },
+            {
+                "id": 6
+            }
+        ]
+    },
+    {
+        "email": "baz@bar.com",
+        "username": "baz",
+        "password": "123456",
+        "user": {
+            "id": 5
+        },
+        "city": {
+            "id": 4
+        },
+        "short_currency_name": "руб.",
+        "scenarios": [
+            {
+                "id": 7
+            },
+            {
+                "id": 3
+            }
+        ]
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "email": "foo@bar.com",
+        "username": "foo",
+        "password": "123456",
+        "image": {
+            "id": 1
+        },
+        "phone": "380919723328"
+    },
+    {
+        "email": "bar@bar.com",
+        "username": "bar",
+        "password": "123456",
+        "image": {
+            "id": 2
+        },
+        "phone": "380919723328"
+    },
+    {
+        "email": "bat@bar.com",
+        "username": "bat",
+        "password": "123456",
+        "image": {
+            "id": 3
+        },
+        "phone": "380919723328"
+    },
+    {
+        "email": "baz@bar.com",
+        "username": "baz",
+        "password": "123456",
+        "image": {
+            "id": 4
+        },
+        "phone": "380919723328"
+    },
+    {
+        "email": "ban@bar.com",
+        "username": "ban",
+        "password": "123456",
+        "image": {
+            "id": 5
+        },
+        "phone": "380919723328"
+    }
+]

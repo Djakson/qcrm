@@ -1,0 +1,106 @@
+{
+    "name": "Franchisee",
+    "options": {
+        "idInjection": false,
+        "plural": "franchisees",
+        "acls": [
+            {
+                "principalType": "ROLE",
+                "principalId": "$everyone",
+                "permission": "ALLOW"
+            },
+            {
+                "principalType": "ROLE",
+                "principalId": "$everyone",
+                "permission": "ALLOW",
+                "property": "create"
+            }
+        ],
+        "relations": {
+            "city": {
+                "type": "belongsTo",
+                "model": "City",
+                "foreignKey": "city_id"
+            },
+            "user": {
+                "type": "belongsTo",
+                "model": "User",
+                "foreignKey": "user_id"
+            },
+            "scenarios": {
+                "type": "hasAndBelongsToMany",
+                "model": "Scenario"
+            }
+        }
+    },
+    "properties": {
+        "id": {
+            "type": "String",
+            "id": true,
+            "length": 20
+        },
+        "send_reminders": {
+            "type": "Boolean",
+            "required": true,
+            "index": true,
+            "default": true
+        },
+        "contact_email": {
+            "type": "String",
+            "doc": "Контактный email франчайзи"
+        },
+        "order_email": {
+            "type": "String"
+        },
+        "hidden": {
+            "type": "Boolean",
+            "required": false,
+            "default": false
+        },
+        "short_currency_name": {
+            "type": "String",
+            "required": true
+        },
+        "phone1": {
+            "type": "String",
+            "required": false
+        },
+        "phone2": {
+            "type": "String",
+            "required": false
+        },
+        "default_ticket_price": {
+            "type": "Number",
+            "required": false
+        },
+        "corporative_price": {
+            "type": "Number",
+            "required": false
+        },
+        "private_game_price": {
+            "type": "Number",
+            "required": false
+        },
+        "private_game_add_person_price": {
+            "type": "Number",
+            "required": false
+        },
+        "certificate_price": {
+            "type": "Number",
+            "required": false
+        },
+        "friends_discount": {
+            "type": "Number",
+            "required": false
+        },
+        "note_discount": {
+            "type": "Number",
+            "required": false
+        },
+        "reserv_discount": {
+            "type": "Number",
+            "required": false
+        }
+
+    }
+}

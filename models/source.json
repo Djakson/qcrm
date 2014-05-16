@@ -1,0 +1,17 @@
+{
+    "name": "Source",
+    "options": {
+        "idInjection": false
+    },
+    "properties": {
+        "id": {
+            "type": "Number",
+            "id": true
+        },
+        "name": {
+            "type": "String",
+            "required": false,
+            "length": 255
+        }
+    }
+}

@@ -1,0 +1,101 @@
+
+<div class="page page-profile" ng-controller="UserProfileCtrl">
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="panel panel-profile">
+                <div class="panel-heading bg-primary clearfix">
+                    <a href="" class="pull-left profile">
+                        <qcthumb data-model="user.image" class="img-circle img80_80" data-size="{w:80}"></qcthumb>
+                    </a>
+                    <h3>{{user.username}}</h3>
+                    <p>{{user.description}}</p>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge badge-danger">6</span>
+                        <i class="fa fa-envelope-o"></i>
+                        Cras justo odio
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge badge-warning">2</span>
+                        <i class="fa fa-comments-o"></i>
+                        Dapibus ac facilisis in
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge badge-info">1</span>
+                        <i class="fa fa-heart-o"></i>
+                        Morbi leo risus
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge badge-success">3</span>
+                        <i class="fa fa-folder-open-o"></i>
+                        Vestibulum at eros
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <div ng-if="user.leading_games.length" class="col-sm-6">
+                    <div class="panel mini-box">
+                        <span class="box-icon bg-info">
+                            <i class="fa fa-gamepad"></i>
+                        </span>
+                        <div class="box-info">
+                            <p class="size-h2">{{user.leading_games.length}}</p>
+                            <p class="text-muted">{{'games led by'|i18n}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="panel-heading">
+                    <strong>
+                        <span class="glyphicon glyphicon-th"></span>
+                        Profile Info
+                    </strong>
+                </div>
+                <div class="panel-body">
+                    <div class="media">
+                        <div class="media-body">
+                            <ul class="list-unstyled list-info">
+                                <li>
+                                    <span class="icon glyphicon glyphicon-user"></span>
+                                    <label>User name</label>
+                                    {{user.username}}
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-envelope"></span>
+                                    <label>Email</label>
+                                    {{user.email}}
+                                </li>
+                                <li>
+                                    <span class="icon glyphicon glyphicon-earphone"></span>
+                                    <label>Contact</label>
+                                    {{user.phone}}
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default" ng-if="user.leading_games.length">
+                <ul class="list-unstyled list-info">
+                    <li ng-repeat="game in user.leading_games">
+                        <!-- <ng-include src="'/app/views/qcrm/shared/partials/game_media_object.html'"></ng-include> -->
+                        <qmo data-entity="game" data-model="game" data-include="{'scenario':'image','lead':'image'}"></qmo>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

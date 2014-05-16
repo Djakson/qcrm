@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "ACLCtrl.js",
+  "sourceRoot": "",
+  "sources": [
+    "ACLCtrl.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,CAAA,IAAA,CAAO,EAAP,CAAA;EACkC,CAA2C,CAAA,CAArD,CAAD,EAAA,CAAuD,CAAD,CAAtD,CAAA;CAEnB,EAAe,CAAI,CAAnB,CAAA,EAAe;CAAf,EACqB,CAAI,EAAzB,KAAA,GAAqB;CADrB,EAEe,CAAI,CAAnB,CAAA;CAFA,EAIe,EAAf,CAAA,GAAe;CAGR,CAAa,CAApB,CAAa,CAAA,CAAP,GAAQ,IAAd;CATmB,IAAsD;CAD7E,GAAA;CAAA"
+}

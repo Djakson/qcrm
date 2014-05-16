@@ -1,0 +1,17 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">{{"SCENARIO.MODAL.TITLE"|i18n}}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="list" ng-repeat="scenario in scenarios">
+            <qmo data-entity="scenario" data-model="scenario" data-include="'image'"></qmo>
+            <div ng-hide="scenario.selected" ng-click="addTo(scenario)" class="btn btn-add btn-primary btn-xs">{{"BTN.ADD"|i18n}}</div>
+            <div ng-hide="!scenario.selected" ng-click="removeFrom(scenario)" class="btn btn-delete btn-warning btn-xs">{{"BTN.REMOVE"|i18n}}</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="submitForm()">{{"SAVE"|i18n}}</button>
+        <button class="btn btn-warning" ng-click="cancel()">{{"CANCEL"|i18n}}</button>
+    </div>
+</div>
+

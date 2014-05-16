@@ -1,0 +1,63 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">{{"ORDER.MODAL.TITLE"|i18n}}</h3>
+    </div>
+    <div class="modal-body">
+        <form name="form_edit" class="form-horizontal form-validation" data-ng-submit="submitForm()">
+            <tabset data-justified="true">
+                <tab heading="{{'ORDER.FORM.TAB.MAIN'|i18n}}">
+
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"ORDER.ORDER_TYPE"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            {{ order.type.name|i18n }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"ORDER.CUSTOMER"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                          <span href="#" ng-click="customersModal()" class="btn btn-mini btn-inverse">{{"ORDER.CUSTOMER.ADD"|i18n}}</span>
+                          <qmo data-entity="user" data-model="order.customer" data-include="'image'"></qmo>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"ORDER.ORDER_DATE"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="input-group ui-datepicker">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       datepicker-popup="{{format}}"
+                                       ng-model="order.order_date"
+                                       is-open="opened"
+                                       datepicker-options="dateOptions"
+                                       date-disabled="disabled(date, mode)"
+                                       ng-required="true"
+                                       close-text="Close">
+                            </div>
+                        </div>
+                    </div>
+
+                </tab>
+            </tabset>
+            <div class="divider"></div>
+            <div class="alert alert-info" data-ng-show="showInfoOnSubmit">This is just for demo. In real project, you
+                will submit form with AJAX :)
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-ng-disabled="!canSubmit()" ng-click="submitForm()">{{"SAVE"|i18n}}</button>
+        <button class="btn btn-warning" ng-click="cancel()">{{"CANCEL"|i18n}}</button>
+    </div>
+</div>

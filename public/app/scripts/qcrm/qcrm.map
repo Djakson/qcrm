@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "qcrm.js",
+  "sourceRoot": "",
+  "sources": [
+    "qcrm.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,GAAA,EAAA;;CAAA,CAAA,CAAO,CAAP,EAAO,CAAO;;CAAd,CAEA,EAAI,GAAJ,EAAA;GAAyB,EAAA,IAAA;CAAA,YACrB;CADoB,IAAC;CAFzB,GAEA;;CAFA,CAOA,CAAiB,EAAA,CAAX,CAAN,EAAkB;CACR,EAA0B,EAA3B,CAAL,KAAA;CARJ,EAOiB;CAPjB"
+}

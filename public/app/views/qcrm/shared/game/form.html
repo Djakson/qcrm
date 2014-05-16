@@ -1,0 +1,131 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">{{"GAME.MODAL.TITLE"|i18n}}</h3>
+    </div>
+    <div class="modal-body">
+        <form name="form_edit" class="form-horizontal form-validation" data-ng-submit="submitForm()">
+            <tabset data-justified="true">
+                <tab heading="{{'GAME.FORM.TAB.MAIN'|i18n}}">
+
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"GAME.SCENARIO"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                          <span href="#" ng-click="scenariosModal()" class="btn btn-mini btn-inverse">{{"GAME.SCENARIO.ADD"|i18n}}</span>
+                          <qmo data-entity="scenario" data-model="game.scenario" data-include="'image'"></qmo>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"GAME.ITEM_DATE"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="input-group ui-datepicker">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       datepicker-popup="{{format}}"
+                                       ng-model="game.item_date"
+                                       is-open="opened"
+                                       datepicker-options="dateOptions"
+                                       date-disabled="disabled(date, mode)"
+                                       ng-required="true"
+                                       close-text="Close">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-3" style="line-height: 110px;">
+                            <label for="">{{"GAME.TIME_BEGIN"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div ng-model="game.time_begin" style="display:inline-block;">
+                                <timepicker class="ui-timepicker" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3" style="line-height: 110px;">
+                            <label for="">{{"GAME.TIME_END"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div ng-model="game.time_end" style="display:inline-block;">
+                                <timepicker class="ui-timepicker" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"GAME.TICKET_PRICE"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-model="game.ticket_price">
+                                <span class="input-group-addon">$</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"GAME.DISCOUNTS_APPLY"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <label class="switch switch-success">
+                                    <input type="checkbox" ng-model="game.discounts_apply"><i></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"GAME.IS_COSTUMED"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <label class="switch switch-success">
+                                    <input type="checkbox" ng-model="game.is_costumed"><i></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"GAME.IS_NEW"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <label class="switch switch-success">
+                                    <input type="checkbox" ng-model="game.is_new"><i></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"GAME.LEAD"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <gamelead data-model="game.lead"></gamelead>
+                        </div>
+                    </div>
+
+                </tab>
+            </tabset>
+            <div class="divider"></div>
+            <div class="alert alert-info" data-ng-show="showInfoOnSubmit">This is just for demo. In real project, you
+                will submit form with AJAX :)
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-ng-disabled="!canSubmit()" ng-click="submitForm()">{{"SAVE"|i18n}}</button>
+        <button class="btn btn-warning" ng-click="cancel()">{{"CANCEL"|i18n}}</button>
+    </div>
+</div>

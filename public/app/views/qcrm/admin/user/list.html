@@ -1,0 +1,111 @@
+
+<div class="page page-table" data-ng-controller="userListCtrl">
+
+    <section class="panel panel-default table-dynamic">
+        <div class="panel-heading">
+            <span class="btn btn-mini btn-info" ng-click="add()">{{"USER.NEW"|i18n}}</span>
+        </div>
+
+        <div class="table-filters">
+            <div class="row">
+                <div class="col-sm-4 col-xs-6">
+                    <form>
+                        <input type="text"
+                               placeholder="search"
+                               class="form-control"
+                               data-ng-model="searchKeywords"
+                               data-ng-keyup="search()">
+                    </form>
+                </div>
+                <div class="col-sm-3 col-xs-6 filter-result-info">
+                    <label class="ui-checkbox">
+                        <input name="checkbox1" type="checkbox" value="franchisee" data-ng-model="onlyFranchisee">
+                        <span>{{"FILTER.FRANCHISEE"|i18n}}</span>
+                    </label>
+                </div>
+                <div class="col-sm-3 col-xs-6 filter-result-info">
+                    <span>
+                        Showing {{filteredUsers.length}}/{{users.length}} entries
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped table-responsive">
+            <thead>
+            <tr>
+                <th style="width:35px"><div class="th">
+                    ID
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('id') "
+                              data-ng-class="{active: row == 'id'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-id') "
+                              data-ng-class="{active: row == '-id'}"></span>
+                </div></th>
+                <th style="width:80px">
+                    <div class="th">
+                        {{'USER.IMAGE'|i18n}}
+                    </div>
+                </th>
+                <th><div class="th">
+                    Username
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('username') "
+                              data-ng-class="{active: row == 'username'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-username') "
+                              data-ng-class="{active: row == '-username'}"></span>
+                </div></th>
+                <th><div class="th">
+                    Email
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('email') "
+                              data-ng-class="{active: row == 'email'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-email') "
+                              data-ng-class="{active: row == '-email'}"></span>
+                </div></th>
+                <th><div class="th"></div></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-ng-repeat="user in currentPageUsers">
+                <td>{{user.id}}</td>
+                <td><qcthumb data-model="user.image" data-size="{w:80}"></qcthumb></td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <button class="btn btn-mini btn-info" ng-click="edit(user)" data-i18n="EDIT"></button>
+                    <button class="btn btn-danger" ng-really-click="remove(user)" ng-really-message="{{'ARE_YOU_SURE?'|i18n}}" data-i18n="DELETE"></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <footer class="table-footer">
+            <div class="row">
+                <div class="col-md-6 page-num-info">
+                    <span>
+                        Show
+                        <select data-ng-model="numPerPage"
+                                data-ng-options="num for num in numPerPageOpt"
+                                data-ng-change="onNumPerPageChange()">
+                        </select>
+                        entries per page
+                    </span>
+                </div>
+                <div class="col-md-6 text-right pagination-container">
+                    <pagination class="pagination-sm"
+                                page="currentPage"
+                                total-items="filteredUsers.length"
+                                max-size="4"
+                                on-select-page="select(page)"
+                                items-per-page="numPerPage"
+                                rotate="false"
+                                boundary-links="true"></pagination>
+                </div>
+            </div>
+        </footer>
+    </section>
+</div>

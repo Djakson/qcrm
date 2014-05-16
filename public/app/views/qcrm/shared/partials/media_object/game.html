@@ -1,0 +1,20 @@
+<div class="media">
+    <a class="pull-left" href="javascript:;">
+        <qcthumb class="img-rounded img64_64" data-model="media_object.scenario.image" data-size="{w:80}"></qcthumb>
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading">{{media_object.scenario.name}}</h4>
+        <div>
+            <span data-toggle="tooltip" data-placement="top" title="{{'GAME.ITEM_DATE'|i18n}}">
+                <i class="glyphicon glyphicon-calendar"></i>{{media_object.item_date | amDateFormat:'dddd, Do MMMM YYYY'}}
+            </span>
+            <div class="space"></div>
+            <span data-toggle="tooltip" data-placement="top" title="{{'GAME.TIME_RANGE'|i18n}}">
+            <i class="glyphicon glyphicon-time"></i>
+            {{media_object.time_begin | amDateFormat:'hh:mm'}}-{{media_object.time_end | amDateFormat:'hh:mm'}}
+            </span>
+            <div class="space"></div><br>
+            <user-tag data-model="media_object.lead"></user-tag>
+        </div>
+    </div>
+</div>

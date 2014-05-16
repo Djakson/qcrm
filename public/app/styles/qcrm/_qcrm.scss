@@ -1,0 +1,19 @@
+.btn-add, .btn-delete {
+    position: relative;
+    top: -40px;
+    float: right;
+}
+
+
+.form-control-extheight {
+    @extend .btn;
+    height: auto;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.qmo_controls {
+    position: relative;
+    top: -60px;
+    float: right;
+}

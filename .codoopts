@@ -1,0 +1,8 @@
+--name       "QCRM"
+--title      "QCRM Documentation"
+--extension  coffee
+--output     ./doc
+--private
+--closure
+--verbose    true
+./public/app/scripts

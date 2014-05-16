@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>QCRM Documentation</title>
+  <script src='../../javascript/application.js'></script>
+  <script src='../../javascript/search.js'></script>
+  <link rel='stylesheet' href='../../stylesheets/application.css' type='text/css'>
+</head>
+  <body>
+    <div id='base' data-path='../../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../../extra/undefined.html' title='QCRM'>
+      QCRM
+    </a>
+    &raquo;
+    <a href='../../alphabetical_index.html' title='Index'>
+      Index
+    </a>
+    &raquo;
+    <span class='title'>Morris</span>
+    &raquo;
+    <span class='title'>Grid</span>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        Morris.Grid
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>public&#47;app&#47;libs&#47;morris.js&#47;lib&#47;morris.grid.coffee</td>
+        </tr>
+        <tr>
+          <td>Inherits:</td>
+          <td>
+            <a href='../../class/Morris/EventEmitter.html'>Morris.EventEmitter</a>
+          </td>
+        </tr>
+      </table>
+      <h2>Direct Known Subclasses</h2>
+      <p class='children'>
+        <a href='../../class/Morris/Bar.html'>Morris.Bar</a>
+        <a href='../../class/Morris/Line.html'>Morris.Line</a>
+      </p>
+      <h2>Variables Summary</h2>
+      <dl class='constants'>
+  <dt id='gridDefaults-variable'>
+    gridDefaults
+    =
+  </dt>
+  <dd>
+    <pre><code class='coffeescript'>{
+  dateFormat: null,
+  axes: true,
+  grid: true,
+  gridLineColor: &#39;#aaa&#39;,
+  gridStrokeWidth: 0.5,
+  gridTextColor: &#39;#888&#39;,
+  gridTextSize: 12,
+  gridTextFamily: &#39;sans-serif&#39;,
+  gridTextWeight: &#39;normal&#39;,
+  hideHover: false,
+  yLabelFormat: null,
+  xLabelAngle: 0,
+  numLines: 5,
+  padding: 25,
+  parseTime: true,
+  postUnits: &#39;&#39;,
+  preUnits: &#39;&#39;,
+  ymax: &#39;auto&#39;,
+  ymin: &#39;auto 0&#39;,
+  goals: [],
+  goalStrokeWidth: 1.0,
+  goalLineColors: [&#39;#666633&#39;, &#39;#999966&#39;, &#39;#cc6666&#39;, &#39;#663333&#39;],
+  events: [],
+  eventStrokeWidth: 1.0,
+  eventLineColors: [&#39;#005a04&#39;, &#39;#ccffbb&#39;, &#39;#3a5f0b&#39;, &#39;#005502&#39;],
+  rangeSelect: null,
+  rangeSelectColor: &#39;#eef&#39;,
+  resize: false
+}</code></pre>
+    <div class='docstring'>
+  <p>Default options</p>
+</div>
+<div class='tags'>
+</div>
+  </dd>
+</dl>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#setData-dynamic'>
+        #
+(void)
+<b>setData</b><span>(data, redraw = true)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Update the data series and redraw the chart. 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#yboundary-dynamic'>
+        #
+(void)
+<b>yboundary</b><span>(boundaryType, currentValue)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#autoGridLines-dynamic'>
+        #
+(void)
+<b>autoGridLines</b><span>(ymin, ymax, nlines)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#_calc-dynamic'>
+        #
+(void)
+<b>_calc</b><span>()</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#transY-dynamic'>
+        #
+(void)
+<b>transY</b><span>(y)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Quick translation helpers 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#transX-dynamic'>
+        #
+(void)
+<b>transX</b><span>(x)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#redraw-dynamic'>
+        #
+(void)
+<b>redraw</b><span>()</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Draw it! <p>If you need to re-size your charts, call this method after changing the
+size of the container element.</p>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#measureText-dynamic'>
+        #
+(void)
+<b>measureText</b><span>(text, angle = 0)</span>
+      </a>
+    </span>
+    <span class='note private title'>Private</span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#yAxisFormat-dynamic'>
+        #
+(void)
+<b>yAxisFormat</b><span>(label)</span>
+      </a>
+    </span>
+    <span class='note private title'>Private</span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#yLabelFormat-dynamic'>
+        #
+(void)
+<b>yLabelFormat</b><span>(label)</span>
+      </a>
+    </span>
+    <span class='note private title'>Private</span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#drawGrid-dynamic'>
+        #
+(void)
+<b>drawGrid</b><span>()</span>
+      </a>
+    </span>
+    <span class='desc'>
+      draw y axis labels, horizontal lines 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#drawGoals-dynamic'>
+        #
+(void)
+<b>drawGoals</b><span>()</span>
+      </a>
+    </span>
+    <span class='desc'>
+      draw goals horizontal lines 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#drawEvents-dynamic'>
+        #
+(void)
+<b>drawEvents</b><span>()</span>
+      </a>
+    </span>
+    <span class='desc'>
+      draw events vertical lines 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#drawGoal-dynamic'>
+        #
+(void)
+<b>drawGoal</b><span>(goal, color)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#drawEvent-dynamic'>
+        #
+(void)
+<b>drawEvent</b><span>(event, color)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#drawYAxisLabel-dynamic'>
+        #
+(void)
+<b>drawYAxisLabel</b><span>(xPos, yPos, text)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#drawGridLine-dynamic'>
+        #
+(void)
+<b>drawGridLine</b><span>(path)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#startRange-dynamic'>
+        #
+(void)
+<b>startRange</b><span>(x)</span>
+      </a>
+    </span>
+    <span class='desc'>
+      Range selection 
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#endRange-dynamic'>
+        #
+(void)
+<b>endRange</b><span>(x)</span>
+      </a>
+    </span>
+    <span class='desc'>
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#resizeHandler-dynamic'>
+        #
+(void)
+<b>resizeHandler</b><span>()</span>
+      </a>
+    </span>
+    <span class='bound note title'>Bound</span>
+    <span class='desc'>
+    </span>
+  </li>
+</ul>
+      <h2>
+        <small>Inherited Method Summary</small>
+        <h3 class='inherited'>
+          Methods inherited from
+          <a href='../../class/Morris/EventEmitter.html'>Morris.EventEmitter</a>
+        </h3>
+        <p class='inherited'>
+          <a href='../../class/Morris/EventEmitter.html#on-dynamic'>#on</a>
+          <a href='../../class/Morris/EventEmitter.html#fire-dynamic'>#fire</a>
+        </p>
+      </h2>
+      <h2>Constructor Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='constructor-dynamic'>
+      #
+(void)
+<b>constructor</b><span>(options)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>A generic pair of axes for line/area/bar charts.</p><p>Draws grid lines and axis labels.</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+</div>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='setData-dynamic'>
+      #
+(void)
+<b>setData</b><span>(data, redraw = true)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Update the data series and redraw the chart.</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='yboundary-dynamic'>
+      #
+(void)
+<b>yboundary</b><span>(boundaryType, currentValue)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='autoGridLines-dynamic'>
+      #
+(void)
+<b>autoGridLines</b><span>(ymin, ymax, nlines)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='_calc-dynamic'>
+      #
+(void)
+<b>_calc</b><span>()</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='transY-dynamic'>
+      #
+(void)
+<b>transY</b><span>(y)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Quick translation helpers</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='transX-dynamic'>
+      #
+(void)
+<b>transX</b><span>(x)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='redraw-dynamic'>
+      #
+(void)
+<b>redraw</b><span>()</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Draw it!</p><p>If you need to re-size your charts, call this method after changing the
+size of the container element.</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='measureText-dynamic'>
+      #
+(void)
+<b>measureText</b><span>(text, angle = 0)</span>
+      <span class='note private'>Private</span>
+      <br>
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='yAxisFormat-dynamic'>
+      #
+(void)
+<b>yAxisFormat</b><span>(label)</span>
+      <span class='note private'>Private</span>
+      <br>
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='yLabelFormat-dynamic'>
+      #
+(void)
+<b>yLabelFormat</b><span>(label)</span>
+      <span class='note private'>Private</span>
+      <br>
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='drawGrid-dynamic'>
+      #
+(void)
+<b>drawGrid</b><span>()</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>draw y axis labels, horizontal lines</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='drawGoals-dynamic'>
+      #
+(void)
+<b>drawGoals</b><span>()</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>draw goals horizontal lines</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='drawEvents-dynamic'>
+      #
+(void)
+<b>drawEvents</b><span>()</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>draw events vertical lines</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='drawGoal-dynamic'>
+      #
+(void)
+<b>drawGoal</b><span>(goal, color)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='drawEvent-dynamic'>
+      #
+(void)
+<b>drawEvent</b><span>(event, color)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='drawYAxisLabel-dynamic'>
+      #
+(void)
+<b>drawYAxisLabel</b><span>(xPos, yPos, text)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='drawGridLine-dynamic'>
+      #
+(void)
+<b>drawGridLine</b><span>(path)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='startRange-dynamic'>
+      #
+(void)
+<b>startRange</b><span>(x)</span>
+      <br>
+    </p>
+    <div class='docstring'>
+  <p>Range selection</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='endRange-dynamic'>
+      #
+(void)
+<b>endRange</b><span>(x)</span>
+      <br>
+    </p>
+    
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='resizeHandler-dynamic'>
+      #
+(void)
+<b>resizeHandler</b><span>()</span>
+      <span class='bound note'>Bound</span>
+      <br>
+    </p>
+    
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  May 10, 14 18:10:07 by
+  <a href='https://github.com/coffeedoc/codo' title='CoffeeScript API documentation generator'>
+    Codo
+  </a>
+  2.0.8
+  &#10034;
+  Press H to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/netzpirat' target='_parent'>@netzpirat</a>
+  &#10034;
+  <a href='http://twitter.com/_inossidabile' target='_parent'>@_inossidabile</a>
+</div>
+<iframe id='search_frame'></iframe>
+<div id='fuzzySearch'>
+  <input type='text'>
+  <ol></ol>
+</div>
+<div id='help'>
+  <p>
+    Quickly fuzzy find classes, mixins, methods, file:
+  </p>
+  <ul>
+    <li>
+      <span>T</span>
+      Open fuzzy finder dialog
+    </li>
+  </ul>
+  <p>
+    Control the navigation frame:
+  </p>
+  <ul>
+    <li>
+      <span>L</span>
+      Toggle list view
+    </li>
+    <li>
+      <span>C</span>
+      Show class list
+    </li>
+    <li>
+      <span>I</span>
+      Show mixin list
+    </li>
+    <li>
+      <span>F</span>
+      Show file list
+    </li>
+    <li>
+      <span>M</span>
+      Show method list
+    </li>
+    <li>
+      <span>E</span>
+      Show extras list
+    </li>
+  </ul>
+  <p>
+    You can focus and blur the search input:
+  </p>
+  <ul>
+    <li>
+      <span>S</span>
+      Focus search input
+    </li>
+    <li>
+      <span>Esc</span>
+      Blur search input
+    </li>
+  </ul>
+</div>
+  </body>
+</html>

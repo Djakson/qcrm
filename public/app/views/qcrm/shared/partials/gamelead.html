@@ -1,0 +1,9 @@
+<div class="">
+    <span class="btn" ng-click="select()">{{'CHOSE'|i18n}}</span>
+
+    <div ng-if="user.id">
+        <!-- <ng-include src="'/app/views/qcrm/shared/partials/user_media_object.html'"></ng-include> -->
+        <qmo data-entity="user" data-model="user" data-include="'image'"></qmo>
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+{
+    "name": "Scenario",
+    "options": {
+        "idInjection": false,
+        "relations": {
+            "image": {
+                "type": "belongsTo",
+                "model": "Image",
+                "foreignKey": "image_id"
+            }
+        }
+    },
+    "properties": {
+        "id": {
+            "type": "String",
+            "length": 20,
+            "id": true
+        },
+        "name": {
+            "type": "String",
+            "length": 200
+        },
+        "short_desc": {
+            "type": "String",
+            "length": 200
+        },
+        "full_desc": {
+            "type": "String",
+            "length": 1024
+        },
+        "players_min": {
+            "type": "Number",
+            "default": 1
+        },
+        "players_max": {
+            "type": "Number",
+            "default": 30
+        }
+    }
+}

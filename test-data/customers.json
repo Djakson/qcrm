@@ -1,0 +1,53 @@
+[
+    {
+        "name": "Foo",
+        "email": "foo@bar.com",
+        "username": "foo",
+        "password": "123456",
+        "phone": "(066) 429-91-09",
+        "last_contact_date": "May 3, 2014 02:55:01",
+        "source": {
+            "id": 3
+        },
+        "user": {
+            "id": 2
+        }
+    },
+    {
+        "name": "Bar",
+        "email": "bar@bar.com",
+        "username": "bar",
+        "password": "123456",
+        "source": {
+            "id": 2
+        },
+        "user": {
+            "id": 5
+        }
+    },
+    {
+        "name": "Bat",
+        "email": "bat@bar.com",
+        "username": "bat",
+        "password": "123456",
+        "phone": "(091) 972-33-28",
+        "source": {
+            "id": 3
+        },
+        "user": {
+            "id": 1
+        }
+    },
+    {
+        "name": "Baz",
+        "email": "baz@bar.com",
+        "username": "baz",
+        "password": "123456",
+        "source": {
+            "id": 1
+        },
+        "user": {
+            "id": 4
+        }
+    }
+]

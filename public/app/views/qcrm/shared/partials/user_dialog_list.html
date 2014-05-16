@@ -1,0 +1,22 @@
+<div class="">
+    <div class="modal-header">
+        <div class="modal-title">{{'USER.CHOOSEN_LIST'|i18n}}</div>
+    </div>
+    <div class="modal-body">
+        <ul>
+            <li ng-repeat="user in users">
+                <qmo data-entity="user" data-model="user" data-include="'image'"></qmo>
+                <label class="switch switch-success" style="position: relative;top: -40px;float: right;">
+                    <input type="checkbox" ng-model="user.selected" ng-change="choose(user)" class="">
+                    <i></i>
+                </label>
+            </li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary ng-binding" ng-click="select()">{{'CHOOSE'|i18n}}</button>
+        <button class="btn btn-warning ng-binding" ng-click="cancel()">{{'CANCEL'|i18n}}</button>
+    </div>
+</div>
+
+

@@ -1,0 +1,16 @@
+{
+    "name": "City",
+    "options": {
+        "idInjection": false
+    },
+    "properties": {
+        "id": {
+            "type": "Number",
+            "id": 1
+        },
+        "name": {
+            "type": "String",
+            "length": 50
+        }
+    }
+}

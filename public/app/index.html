@@ -1,0 +1,122 @@
+<!doctype html>
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+        <title>Questoria CRM</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+        <!-- needs images, font... therefore can not be part of ui.css -->
+        <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="libs/weather-icons/css/weather-icons.min.css">
+        <link rel="stylesheet" href="scripts/acute.select/acute.select.css">
+        <!-- end needs images -->
+
+            <!-- build:css styles/ui.css -->
+            <link rel="stylesheet" href="libs/morris.js/morris.css">
+            <!-- endbuild -->
+            <link rel="stylesheet" href="css/main.css">
+
+    </head>
+    <body data-ng-app="app" id="app" data-custom-background data-off-canvas-nav>
+
+        <div data-ng-controller="AppCtrl">
+            <!--[IF lt IE 9]>
+            <p class="browsehappy" data-i18n="get_happy_browser" data-hipermedia="true"></p>
+            <![endif]-->
+            <div data-ng-hide="isSpecificPage()"
+                 data-ng-cloak>
+                <section data-ng-include=" 'views/header.html' "
+                     id="header" class="top-header"></section>
+
+                <aside data-ng-include=" 'views/nav.html' "
+                     id="nav-container"></aside>
+            </div>
+
+            <div class="view-container">
+                <section data-ng-view id="content" class="animate-fade-up"></section>
+            </div>
+        </div>
+
+
+        <!-- build:js scripts/vendor.js -->
+        <script src="libs/jquery/dist/jquery.min.js"></script>
+        <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="libs/angular/angular.min.js"></script>
+        <script src="libs/angular-route/angular-route.min.js"></script>
+        <script src="libs/angular-resource/angular-resource.min.js"></script>
+        <script src="libs/angular-animate/angular-animate.min.js"></script>
+        <script src="libs/underscore/underscore-min.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/ui.js -->
+        <script src="libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="libs/jquery-spinner/dist/jquery.spinner.min.js"></script>
+        <script src="libs/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+        <script src="libs/jquery-steps/build/jquery.steps.min.js"></script>
+        <script src="libs/toastr/toastr.min.js"></script>
+        <script src="libs/bootstrap-file-input/bootstrap.file-input.js"></script>
+        <script src="libs/jquery.slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="libs/holderjs/holder.js"></script>
+        <script src="libs/raphael/raphael-min.js"></script>
+        <script src="libs/morris.js/morris.js"></script>
+        <script src="scripts/vendors/responsive-tables.js"></script>
+        <script src="scripts/vendors/jquery.sparkline.min.js"></script>
+        <script src="libs/flot/jquery.flot.js"></script>
+        <script src="libs/flot/jquery.flot.resize.js"></script>
+        <script src="libs/flot/jquery.flot.pie.js"></script>
+        <script src="libs/flot/jquery.flot.stack.js"></script>
+        <script src="libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+        <script src="libs/flot/jquery.flot.time.js"></script>
+        <script src="libs/gauge.js/dist/gauge.min.js"></script>
+        <script src="libs/jquery.easy-pie-chart/dist/angular.easypiechart.min.js"></script>
+        <script src="libs/angular-wizard/dist/angular-wizard.min.js"></script>
+        <script src="libs/textAngular/dist/textAngular-sanitize.min.js"></script>
+        <script src="libs/textAngular/dist/textAngular.min.js"></script>
+        <script src="libs/angular-file-upload/angular-file-upload.min.js"></script>
+        <script src="scripts/vendors/skycons.js"></script>
+        <script src="scripts/acute.select/acute.select.js"></script>
+        <script src="libs/bootbox/bootbox.min.js"></script>
+        <script src="libs/moment/moment.js"></script>
+        <script src="libs/angular-moment/angular-moment.js"></script>
+        <script src="libs/moment/lang/de.js"></script>
+        <script src="libs/moment/lang/en-gb.js"></script>
+        <script src="libs/moment/lang/ru.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/app.js -->
+        <script src="scripts/qcrm/lb-services.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/shared/main.js"></script>
+        <script src="scripts/shared/directives.js"></script>
+        <script src="scripts/shared/localize.js"></script>
+        <script src="scripts/UI/UICtrl.js"></script>
+        <script src="scripts/UI/UIDirective.js"></script>
+        <script src="scripts/UI/UIService.js"></script>
+        <script src="scripts/Form/FormDirective.js"></script>
+        <script src="scripts/Form/FormCtrl.js"></script>
+        <script src="scripts/Form/FormValidation.js"></script>
+        <script src="scripts/Table/TableCtrl.js"></script>
+        <script src="scripts/Task/Task.js"></script>
+        <script src="scripts/Chart/ChartCtrl.js"></script>
+        <script src="scripts/Chart/ChartDirective.js"></script>
+        <!-- endbuild -->
+
+
+        <!-- build:js({.tmp,app}) scripts/qcrm -->
+        <script src="scripts/qcrm/qcrm.js"></script>
+        <script src="scripts/qcrm/directives.js"></script>
+        <script src="scripts/qcrm/controller/admin/user/userListCtrl.js"></script>
+        <script src="scripts/qcrm/controller/shared/user/UserProfileCtrl.js"></script>
+        <script src="scripts/qcrm/controller/shared/game/gameListCtrl.js"></script>
+        <script src="scripts/qcrm/controller/shared/scenario/scenarioListCtrl.js"></script>
+        <script src="scripts/qcrm/controller/shared/order/orderListCtrl.js"></script>
+
+        <script src="scripts/qcrm/controller/AuthCtrl.js"></script>
+        <script src="scripts/qcrm/dacl.js"></script>
+        <script src="scripts/qcrm/controller/admin/acl/ACLCtrl.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<div class="media">
+    <a class="pull-left" href="javascript:;">
+        <qcthumb class="img-rounded img64_64" data-model="media_object.customer.image" data-size="{w:80}"></qcthumb>
+        <div>{{media_object.customer.username}} <span ng-if="media_object.additional_players_count">{{'and %d player'|i18n}}</span></div>
+    </a>
+    <div class="space pull-left" style="line-height: 40px;"><i class="glyphicon glyphicon-arrow-right"></i></div>
+    <a class="pull-left" href="javascript:;">
+        <qcthumb class="img-rounded img64_64" data-model="media_object.scheduled_game.scenario.image" data-size="{w:80}"></qcthumb>
+        <div>{{media_object.scheduled_game.scenario.name}}</div>
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading">{{ 'ORDER'|i18n }} №{{media_object.id}} [{{media_object.type.name|i18n }}]</h4>
+        <div>
+            <span data-toggle="tooltip" data-placement="top" title="{{'ORDER.ORDER_DATE'|i18n}}">
+                <i class="glyphicon glyphicon-calendar"></i>{{media_object.order_date | amDateFormat:'dddd, Do MMMM YYYY'}}
+            </span>
+        </div>
+    </div>
+</div>

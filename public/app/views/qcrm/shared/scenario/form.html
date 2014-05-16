@@ -1,0 +1,62 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">{{"SCENARIO.MODAL.TITLE"|i18n}}</h3>
+    </div>
+    <div class="modal-body">
+        <form name="form_edit" class="form-horizontal form-validation" data-ng-submit="submitForm()">
+            <tabset data-justified="true">
+                <tab heading="{{'SCENARIO.FORM.TAB.MAIN'|i18n}}">
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"SCENARIO.IMAGE"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <qcthumb data-model="scenario.image" data-size="{w:80}" data-uploader="true"></qcthumb>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"SCENARIO.NAME"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text"
+                                   class="form-control"
+                                   data-ng-model="scenario.name"
+                                   required
+                                   data-ng-minlength="2"
+                                   data-ng-maxlength="30">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"SCENARIO.SHORT_DESC"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text"
+                                   class="form-control"
+                                   data-ng-model="scenario.short_desc"
+                                   >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-3">
+                            <label for="">{{"SCENARIO.FULL_DESC"|i18n}}</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <text-angular ta-text-editor-class="form-control-extheight" data-ng-model="scenario.full_desc"></text-angular>
+                        </div>
+                    </div>
+                </tab>
+            </tabset>
+            <div class="divider"></div>
+            <div class="alert alert-info" data-ng-show="showInfoOnSubmit">This is just for demo. In real project, you
+                will submit form with AJAX :)
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" data-ng-disabled="!canSubmit()" ng-click="submitForm()">{{"SAVE"|i18n}}</button>
+        <button class="btn btn-warning" ng-click="cancel()">{{"CANCEL"|i18n}}</button>
+    </div>
+</div>

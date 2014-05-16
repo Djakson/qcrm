@@ -1,0 +1,7 @@
+.nide
+node_modules
+.idea
+.sass-cache
+build
+public/app/libs/*
+!public/app/libs/.gitignore

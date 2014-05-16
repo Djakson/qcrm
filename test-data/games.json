@@ -1,0 +1,60 @@
+[
+
+    {
+        "item_date": "December 1, 2014",
+        "time_begin": "December 1, 2014",
+        "time_end": "December 2, 2014",
+        "ticket_price": "1000",
+        "discounts_apply": true,
+        "is_costumed": true,
+        "is_new": true,
+        "additional_info": "Дополнительная инфа",
+        "scenario": {
+            "id": 1
+        },
+        "lead": {
+            "id": 4
+        },
+        "location": {
+            "id": 1
+        }
+    },
+    {
+        "item_date": "December 2, 2014",
+        "time_begin": "December 2, 2014",
+        "time_end": "December 4, 2014",
+        "ticket_price": "7000",
+        "discounts_apply": true,
+        "is_costumed": true,
+        "is_new": true,
+        "additional_info": "Дополнительная инфа 2",
+        "scenario": {
+            "id": 2
+        },
+        "lead": {
+            "id": 2
+        },
+        "location": {
+            "id": 12
+        }
+    },
+    {
+        "item_date": "December 3, 2014",
+        "time_begin": "December 3, 2014",
+        "time_end": "December 4, 2014",
+        "ticket_price": "1600",
+        "discounts_apply": true,
+        "is_costumed": false,
+        "is_new": true,
+        "additional_info": "Дополнительная инфа 3",
+        "scenario": {
+            "id": 11
+        },
+        "lead": {
+            "id": 4
+        },
+        "location": {
+            "id": 5
+        }
+    }
+]

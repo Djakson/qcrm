@@ -1,0 +1,50 @@
+{
+    "name": "Location",
+    "options": {
+        "idInjection": false,
+        "relations": {
+            "city": {
+                "model": "City",
+                "type": "belongsTo",
+                "foreignKey": "city_id"
+            },
+            "country": {
+                "model": "Country",
+                "type": "belongsTo",
+                "foreignKey": "country_id"
+            }
+        }
+    },
+    "properties": {
+        "id": {
+            "type": "Number",
+            "id": 1
+        },
+        "street": {
+            "type": "String",
+            "required": false,
+            "length": 64
+        },
+        "city_id": {
+            "type": "Number",
+            "required": false
+        },
+        "country_id": {
+            "type": "Number",
+            "required": false
+        },
+        "zipcode": {
+            "type": "Number",
+            "required": false,
+            "length": 20
+        },
+        "name": {
+            "type": "String",
+            "required": false,
+            "length": 32
+        },
+        "geo": {
+            "type": "GeoPoint"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "OrderType",
+    "options": {
+        "idInjection": false
+    },
+    "properties": {
+        "id": {
+            "type": "String",
+            "length": 20,
+            "id": true
+        },
+        "name": {
+            "type": "String",
+            "length": 50
+        }
+    }
+}

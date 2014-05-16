@@ -1,0 +1,110 @@
+<div class="page page-table" data-ng-controller="ScenarioListCtrl">
+
+    <section class="panel panel-default table-dynamic">
+        <div class="panel-heading">
+            <span class="btn btn-mini btn-info" ng-click="add()">{{"SCENARIO.NEW"|i18n}}</span>
+        </div>
+
+        <div class="table-filters">
+            <div class="row">
+                <div class="col-sm-4 col-xs-6">
+                    <form>
+                        <input type="text"
+                               placeholder="search"
+                               class="form-control"
+                               data-ng-model="searchKeywords"
+                               data-ng-keyup="search()">
+                    </form>
+                </div>
+                <div class="col-sm-3 col-xs-6 filter-result-info">
+                    <label class="ui-checkbox">
+                        <input name="checkbox1" type="checkbox" value="franchisee" data-ng-model="onlyFranchisee">
+                        <span>{{"FILTER.FRANCHISEE"|i18n}}</span>
+                    </label>
+                </div>
+                <div class="col-sm-3 col-xs-6 filter-result-info">
+                    <span>
+                        Showing {{filteredScenarios.length}}/{{scenarios.length}} entries
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered table-striped table-responsive">
+            <thead>
+            <tr>
+                <th style="width:35px"><div class="th">
+                    ID
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('id') "
+                              data-ng-class="{active: row == 'id'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-id') "
+                              data-ng-class="{active: row == '-id'}"></span>
+                </div></th>
+                <th style="width:80px">
+                    <div class="th">
+                        {{'SCENARIO.IMAGE'|i18n}}
+                    </div>
+                </th>
+                <th><div class="th">
+                    {{"SCENARIO.NAME"|i18n}}
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('name') "
+                              data-ng-class="{active: row == 'name'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-name') "
+                              data-ng-class="{active: row == '-name'}"></span>
+                </div></th>
+                <th><div class="th">
+                    {{"SCENARIO.SHORT_DESC"|i18n}}
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('short_desc') "
+                              data-ng-class="{active: row == 'short_desc'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-short_desc') "
+                              data-ng-class="{active: row == '-short_desc'}"></span>
+                </div></th>
+                <th><div class="th"></div></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-ng-repeat="scenario in currentPageScenarios">
+                <td>{{scenario.id}}</td>
+                <td><qcthumb data-model="scenario.image" data-size="{w:80}"></qcthumb></td>
+                <td>{{scenario.name}}</td>
+                <td>{{scenario.short_desc}}</td>
+                <td>
+                    <button class="btn btn-mini btn-info" ng-click="edit(scenario)" data-i18n="EDIT"></button>
+                    <button class="btn btn-danger" ng-really-message="{{'ARE_YOU_SURE?'|i18n}}" ng-really-click="remove(scenario)" data-i18n="DELETE"></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <footer class="table-footer">
+            <div class="row">
+                <div class="col-md-6 page-num-info">
+                    <span>
+                        Show
+                        <select data-ng-model="numPerPage"
+                                data-ng-options="num for num in numPerPageOpt"
+                                data-ng-change="onNumPerPageChange()">
+                        </select>
+                        entries per page
+                    </span>
+                </div>
+                <div class="col-md-6 text-right pagination-container">
+                    <pagination class="pagination-sm"
+                                page="currentPage"
+                                total-items="filteredScenarios.length"
+                                max-size="4"
+                                on-select-page="select(page)"
+                                items-per-page="numPerPage"
+                                rotate="false"
+                                boundary-links="true"></pagination>
+                </div>
+            </div>
+        </footer>
+    </section>
+</div>
