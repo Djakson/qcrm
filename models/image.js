@@ -9,13 +9,9 @@ var path = require('path');
 var fs = require('fs');
 var config = require('./../config');
 
-var Image = module.exports = db.createModel(
+var Img = module.exports = db.createModel(
     'image',
     {
-        id: {
-            type:'Number',
-            id: true
-        },
         path: {
             type: 'String',
             length: 200,
@@ -44,7 +40,7 @@ var Image = module.exports = db.createModel(
  * @param size
  * @param callback (err, stdout, stderr)
  */
-Image.prototype.thumbnail = function(size, callback) {
+Img.prototype.thumbnail = function(size, callback) {
     var createSizeFolder = function (size) {
         if (size.w || size.h) {
             var subfolder = '';
@@ -111,15 +107,15 @@ Image.prototype.thumbnail = function(size, callback) {
  * @param size
  * @param fn (err, stdout)
  */
-Image.prototype.createThumb = function (size, fn) {
+Img.prototype.createThumb = function (size, fn) {
     this.thumbnail(size, function(err, stdout){
-        if (err) fn(err);
-        fn(null, stdout);
+        if (err) return fn(err);
+        return fn(null, stdout);
     });
 };
 
 loopback.remoteMethod(
-    Image.prototype.createThumb,
+    Img.prototype.createThumb,
     {
         accepts: [
             {arg: 'size', type: 'object', required: true, http: {source: 'body'}}
@@ -132,4 +128,4 @@ loopback.remoteMethod(
 );
 
 
-Image.attachTo(db);
+Img.attachTo(db);

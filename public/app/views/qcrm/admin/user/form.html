@@ -100,7 +100,7 @@
                         <div class="col-sm-9">
                           <span href="#" ng-click="scenariosModal()" class="btn btn-mini btn-inverse">{{"FRANCHISEE.SCENARIO.ADD"|i18n}}</span>
                           <div ng-repeat="scenario in franchisee.scenarios">
-                            <ng-include src="'/app/views/qcrm/shared/partials/scenario_media_object.html'"></ng-include>
+                            <qmo data-model="scenario" data-entity="scenario" data-include="image"></qmo>
                           </div>
                         </div>
                     </div>

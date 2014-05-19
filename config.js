@@ -24,6 +24,15 @@ config['dev']['mysql'] = {
     password: 'bitnami',
     collation: 'utf8_general_ci'
 };
+
+config['dev']['mongodb'] = {
+    host: 'ds033079.mongolab.com',
+    port: 33079,
+    database: 'qcrm',
+    username: 'jasper',
+    password: 'erdbeermund2003'
+};
+
 config['upload_path'] = path.join(__dirname, 'public', 'app', 'storage');
 config['media_url'] = '/app/storage/';
 config['fake_img'] = {

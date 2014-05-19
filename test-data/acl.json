@@ -1,0 +1,10 @@
+[
+    {
+        "model": "user",
+        "property": "*",
+        "accessType": "*",
+        "permission": "ALLOW",
+        "principalType": "ROLE",
+        "principalId": "admin"
+    }
+]

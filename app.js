@@ -98,7 +98,7 @@ app.start = function() {
   return app.listen(port, ip, function() {
     if(process.env.C9_PROJECT) {
       // Customize the url for the Cloud9 environment
-      baseURL = 'https://' + process.env.C9_PROJECT + '-c9-' + process.env.C9_USER + '.c9.io';
+      baseURL = 'http://' + process.env.C9_PROJECT + '-c9-' + process.env.C9_USER + '.c9.io';
     }
     console.error('LoopBack sample is now ready at ' + baseURL);
   });

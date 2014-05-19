@@ -20,7 +20,7 @@ console.error('To specify another connector:');
 console.error('  DB=oracle node app or DB=oracle slc run app.js');
 console.error('  DB=mongodb node app or DB=mongodb slc run app.js');
 console.error('  DB=mysql node app or DB=mysql slc run app.js');
-
+console.log (config);
 switch (DB) {
   case 'oracle':
   case 'mongodb':
@@ -51,7 +51,7 @@ try {
   process.exit(1);
 }
 
-if (DB === 'mysql') {
+if (DB === 'mongodb') {
   process.nextTick(function () {
     // import data
     require('../test-data/import');

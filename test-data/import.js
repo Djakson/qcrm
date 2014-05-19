@@ -1,7 +1,7 @@
 /**
  * Run `node import.js` to import the test data into the db.
  */
-
+var loopback = require("loopback");
 var db = require('../data-sources/db');
 var customers = require('./customers.json');
 var locations = require('./locations.json');
@@ -15,6 +15,9 @@ var scenarios = require('./scenarios.json');
 var countries = require('./countries.json');
 var images = require('./images.json');
 var games = require('./games.json');
+var acls = require("./acl.json");
+var roles = require("./roles.json");
+var user_roles = require("./user_roles.json");
 // var loopback = require('loopback');
 var Location = require('../models/location');
 var Customer = require('../models/customer');
@@ -26,7 +29,7 @@ var City = require('../models/city');
 var User = require('../models/user');
 var Scenario = require('../models/scenario');
 var Country = require('../models/country');
-var Image = require('../models/image');
+var Img = require('../models/image');
 var Game = require('../models/game');
 
 var async = require('async');
@@ -62,8 +65,9 @@ setTimeout(function(){
             function (cb) {
                 db.autoupdate(cb);
             },
-
-            importData.bind(null, Image, images),
+            importData.bind(null, loopback.ACL, acls),
+            importData.bind(null, loopback.Role, roles),
+            importData.bind(null, Img, images),
             importData.bind(null, User, users),
             importData.bind(null, City, cities),
             importData.bind(null, Country, countries),
@@ -74,7 +78,8 @@ setTimeout(function(){
             importData.bind(null, Order, orders),
             importData.bind(null, Scenario, scenarios),
             importData.bind(null, Game, games),
-
+            importData.bind(null, loopback.RoleMapping, user_roles),
+            
              function (cb) {
                 Franchisee.destroyAll(function (err) {
                     if(err) {
@@ -88,8 +93,12 @@ setTimeout(function(){
                         franchisee.id = ids.franchisee++;
                         Franchisee.create(franchisee, function(err, fran){
                             async.each(franchisee.scenarios, function(scen, callb){
+                                
                                 Scenario.findById(scen.id, function(err, scenario){
-                                    fran.scenarios.add(scenario);
+                                    
+                                    if ( scenario ) {
+                                        fran.scenarios.add(scenario);    
+                                    }
                                     callback();
                                 });
                             });
